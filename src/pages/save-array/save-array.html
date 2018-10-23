@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Salvar Dados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    Digite os valores:
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-textarea [(ngModel)]="valoresText" placeholder="Exemplo: 1,2,3,5,7,13"></ion-textarea>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label color="dark" floating>Posição na memória:</ion-label>
+    <ion-select [(ngModel)]="posicaoSalvarAtual">
+      <ion-option *ngFor="let pos of posicaoSalvar">{{ pos }}</ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <button ion-button color="dark" block (click)="salvarDados()">
+    Salvar
+  </button>
+  <button ion-button color="dark" block (click)="limparDados()">
+    Limpar Armazenamento
+  </button>
+</ion-content>

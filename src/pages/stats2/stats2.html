@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Armazenamento {{posicao}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Dados
+    </ion-card-header>
+    <ion-card-content>
+      {{ dadosTexto }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Dados Ordenados
+    </ion-card-header>
+    <ion-card-content>
+      {{ ordenadosTexto }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Tabela de frequências
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>x</ion-col>
+          <ion-col>f</ion-col>
+          <ion-col>f%</ion-col>
+          <ion-col>F</ion-col>
+          <ion-col>F%</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let freq of arrayFreq">
+          <ion-col style="font-size:9px;">{{ freq[0] }}</ion-col>
+          <ion-col style="font-size:9px;">{{ freq[1] }}</ion-col>
+          <ion-col style="font-size:9px;">{{ freq[2] }}%</ion-col>
+          <ion-col style="font-size:9px;">{{ freq[3] }}</ion-col>
+          <ion-col style="font-size:9px;">{{ freq[4] }}%</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      Média: {{ media }}
+    </ion-item>
+    <ion-item>
+      Moda: {{ moda }}
+    </ion-item>
+    <ion-item>
+      Mediana: {{ mediana }}
+    </ion-item>
+  </ion-list>
+</ion-content>
